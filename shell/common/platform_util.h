@@ -9,6 +9,7 @@
 
 #include "base/callback_forward.h"
 #include "base/files/file_path.h"
+#include "base/optional.h"
 #include "build/build_config.h"
 
 #if defined(OS_WIN)
@@ -20,6 +21,7 @@ class GURL;
 namespace platform_util {
 
 typedef base::OnceCallback<void(const std::string&)> OpenExternalCallback;
+typedef base::OnceCallback<void(int, const std::string&)> OpenItemCallback;
 
 // Show the given file in a file manager. If possible, select the file.
 // Must be called from the UI thread.

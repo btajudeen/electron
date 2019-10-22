@@ -27,8 +27,11 @@ Show the given file in a file manager. If possible, select the file.
 ### `shell.openItem(fullPath)`
 
 * `fullPath` String
+* `callback` Function (optional) _Linux_
+  * `errorCode` Integer - Indicates the error code if the call failed.
+  * `failureReason` String - Failure description corresponding to the `errorCode`.
 
-Returns `Boolean` - Whether the item was successfully opened.
+Returns `Boolean` - Whether a command to open the item was successfully triggered.
 
 Open the given file in the desktop's default manner.
 
