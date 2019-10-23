@@ -177,7 +177,7 @@ URLRequestNS::URLRequestNS(gin::Arguments* args) : weak_factory_(this) {
   }
 
   std::string partition;
-  mate::Handle<api::Session> session;
+  gin::Handle<api::Session> session;
   if (!dict.Get("session", &session)) {
     if (dict.Get("partition", &partition))
       session = Session::FromPartition(args->isolate(), partition);
