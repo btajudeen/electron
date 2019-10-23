@@ -10,9 +10,9 @@
 
 #include "content/public/browser/content_browser_client.h"
 #include "gin/handle.h"
-#include "shell/browser/api/trackable_object.h"
 #include "shell/browser/net/atom_url_loader_factory.h"
 #include "shell/common/gin_helper/dictionary.h"
+#include "shell/common/gin_helper/trackable_object.h"
 
 namespace electron {
 
@@ -35,7 +35,7 @@ enum class ProtocolError {
 };
 
 // Protocol implementation based on network services.
-class ProtocolNS : public mate::TrackableObject<ProtocolNS> {
+class ProtocolNS : public gin_helper::TrackableObject<ProtocolNS> {
  public:
   static gin::Handle<ProtocolNS> Create(v8::Isolate* isolate,
                                         AtomBrowserContext* browser_context);
